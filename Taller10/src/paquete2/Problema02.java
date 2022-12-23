@@ -20,18 +20,22 @@ public class Problema02 {
         double[][] ventas = new double[2][5];
         String[] vendedores = {"Jessica Cole", "Robert Wallace"};
         double sumaventas;
-               
+        
         double ventastotales = 0;
         String mensaje = "";
-        
+        int numerotrabajador = 0;
+        sumaventas = 0;
         for (int i = 0; i < ventas.length; i++) { 
-            sumaventas = 0;
+            
+            numerotrabajador = numerotrabajador + 1;
             for (int j = 0; j < ventas[i].length; j++) { 
-                System.out.println("Ingrese la ventas del día:");
+                System.out.printf("Ingrese las ventas del vendedor %s del "
+                        + "día:\n", numerotrabajador);
                 ventas[i][j] = entrada.nextDouble();
                 sumaventas = sumaventas + ventas[i][j];
-                ventastotales = ventastotales + sumaventas;
+                
             }
+            
         }
         
         for (int i = 0; i < vendedores.length; i++) {
@@ -40,7 +44,7 @@ public class Problema02 {
         }
         
         System.out.printf("%sHa realizado un total de %.2f en ventas.\n",
-                mensaje, ventastotales);
+                mensaje, sumaventas);
     
     }
     
